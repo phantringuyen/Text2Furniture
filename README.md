@@ -1,26 +1,25 @@
 # Text2Furniture
-Text2Furniture generates textured 3D meshes from a given text prompt using 2D text-to-image models.
+Tạo sinh cảnh nội thất ba chiều từ câu mô tả dựa vào trí tuệ nhân tạo tạo sinh.
 
+## Chuẩn bị môi trường
 
-## Prepare Environment
-
-Create a conda environment:
+Tạo môi trường conda ảo với câu lệnh sau
 
 ```
-conda create -n Text2Furniture python=3.9
-conda activate Text2Furniture
-pip install -r requirements.txt
+!conda create -n Text2Furniture python=3.10.12
+!conda activate Text2Furniture
+!pip install -r requirements.txt
 ```
 
 Then install Pytorch3D by following the [official instructions](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md).
-For example, to install Pytorch3D on Linux (tested with PyTorch 1.13.0, CUDA 11.7, Pytorch3D 0.7.2):
+For example, to install Pytorch3D on Linux (tested with PyTorch 1.13.0, CUDA 12.2, Pytorch3D 0.7.7):
 
 ```
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
-pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
+pip install 'git+https://github.com/facebookresearch/pytorch3d.git@stable'
 ```
 
-Download the pretrained model weights for the text-to-image model and the fixed depth inpainting model:
+Download the pre-trained model weights for the text-to-image model and the fixed depth inpainting model:
 https://drive.google.com/drive/folders/1z3pLvjndvZaiYveLY0Vo7ugZzKvl1O7V?usp=sharing
 
 
@@ -68,13 +67,6 @@ We also generate the following intermediate outputs during generation of the sce
     <output_root>/depth/depth_t.png: depth from pose t, that was predicted/aligned from rgb_t and rendered_depth_t
     <output_root>/rgbd/rgbd_t.png: combination of rgb_t and depth_t placed next to each other
 ```
-
-### Create a scene from a fixed start-image
-
-Already have an in-the-wild image, from which you want to start the generation?
-Specify it as ```--input_image_path``` and the generated scene kicks-off from there.
-
-```python generate_scene.py --input_image_path sample_data/0.png```
 
 ### Create a scene from another room type
 
