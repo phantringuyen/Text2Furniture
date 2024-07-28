@@ -1,7 +1,7 @@
 # Text2Furniture
 Tạo sinh cảnh nội thất ba chiều từ câu mô tả dựa vào trí tuệ nhân tạo tạo sinh.
 
-## Chuẩn bị môi trường
+## Cài đặt môi trường
 
 Tạo môi trường conda ảo với câu lệnh sau
 
