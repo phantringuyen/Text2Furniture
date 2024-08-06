@@ -68,14 +68,6 @@ We also generate the following intermediate outputs during generation of the sce
     <output_root>/rgbd/rgbd_t.png: combination of rgb_t and depth_t placed next to each other
 ```
 
-### Create a scene from another room type
-
-Generate indoor-scenes of arbitrary rooms by specifying another ```--trajectory_file``` as input:
-
-```python generate_scene.py --trajectory_file model/trajectories/examples/bedroom.json```
-
-We provide a bunch of [example rooms](model/trajectories/examples).
-
 
 ## Acknowledgements
 
@@ -84,7 +76,10 @@ We thank the authors for providing them.
 
 - [IronDepth](https://github.com/baegwangbin/IronDepth) [1]: a method for monocular depth prediction, that can be used for depth inpainting.
 - [StableDiffusion](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting) [2]: a state-of-the-art text-to-image inpainting model with publicly released network weights.
+- [Text2Room](https://www.researchgate.net/publication/377428396_Text2Room_Extracting_Textured_3D_Meshes_from_2D_Text-to-Image_Models) [3]: a method for generating room-scale textured 3D meshes from a given text prompt as input, also this is our research baseline method.
 
 [1] IronDepth: Iterative Refinement of Single-View Depth using Surface Normal and its Uncertainty, BMVC 2022, Gwangbin Bae, Ignas Budvytis, and Roberto Cipolla
 
 [2] High-Resolution Image Synthesis with Latent Diffusion Models, CVPR 2022, Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer
+
+[3] Text2Room: Extracting Textured 3D Meshes from 2D Text-to-Image Models, 2023 IEEE/CVF ICCV, 7875-7886. 10.1109/ICCV51070.2023.00727. Höllein, Lukas & Cao, Ang & Owens, Andrew & Johnson, Justin & Nießner, Matthias.
